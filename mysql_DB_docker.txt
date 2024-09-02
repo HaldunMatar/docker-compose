@@ -15,12 +15,22 @@ USE madb ;
 
 -docker exec -it my-mysql-container bash
 ——————————git——————-
--  docker build -t my-mysql-image .
+- x docker build -t my-mysql-image .
 - docker-compose up --build
+- docker run --hostname "$(hostname)" -p 3306:3306 -p 5005:5005  dbdocker-app
 - docker exec -it my-mysql-container mysql -u dba -p
 - USE madb;
 - SHOW TABLES;
 - SELECT * FROM users;  # If this was part of your init.sql
 - docker exec -it my-mysql-container bash
 - apt-get update && apt-get install -y tzdata
--docker run -d --name my-mysql-container -p 3306:3306 -p 5005:5005  dbdocker-app
+- docker run -d --name my-mysql-container -p 3306:3306 -p 5005:5005  dbdocker-app
+docker run --hostname "$(hostname)" -p 3306:3306 -p 5005:5005  dbdocker-app
+docker run --hostname "$(hostname)" -p 3307:3306 -p 5005:5005    dbdocker-app 
+docker run --hostname "$(hostname)" -p 3307:3306    mysql:8.0 
+docker run --name ma_insights_DB -e MYSQL_ROOT_PASSWORD=Password123$ -d mysql:8.0 
+
+docker run --name dbdocker  -d  mysql:8.0 
+
+
+

@@ -3,7 +3,8 @@ version: '3.8'
 services:
   db:
     image: mysql:8.0
-    container_name: my-mysql-container
+    container_name: ma_insights_DB
+    # my-mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: 'Password123$'
       MYSQL_DATABASE: madb
@@ -13,15 +14,18 @@ services:
       - mysql_data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mount the init.sql file
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
       - app-network
 
   app:
     build: .
-    container_name: python-app
+    container_name: ma_insights_back
+    # python-app
     environment:
-      - HOST_NAME=my-mysql-container
+      - HOST_NAME=ma_insights_DB
+    hostname: $(hostname) 
+    
     ports:
       - "5005:5005"
     depends_on:
