@@ -3,7 +3,7 @@ version: '3.8'
 services:
   db:
     image: mysql:8.0
-    container_name: my-mysql-container
+    container_name: con_ma_db
     environment:
       MYSQL_ROOT_PASSWORD: 'Password123$'
       MYSQL_DATABASE: madb
@@ -19,7 +19,7 @@ services:
 
   app:
     build: .
-    container_name: python-app
+    container_name: con_ma_back
     environment:
       - HOST_NAME=my-mysql-container
     ports:

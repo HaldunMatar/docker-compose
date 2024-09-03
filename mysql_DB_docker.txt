@@ -14,7 +14,19 @@ SELECT * FROM users1;
 USE madb ;
 
 -docker exec -it my-mysql-container bash
-——————————git——————-
+——————————remove all container——————-
+docker stop $(docker ps -a)
+docker rm $(docker ps -a)
+
+source myenv/bin/activate
+
+
+
+db password: Password123$
+
+
+docker-compose up --build
+
  docker exec -it my-mysql-container bash
 -  docker build -t my-mysql-image .
 - docker-compose up --build
