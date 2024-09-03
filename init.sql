@@ -4,6 +4,11 @@ CREATE DATABASE IF NOT EXISTS madb;
 CREATE USER IF NOT EXISTS 'dba'@'%' IDENTIFIED BY 'Password123$';
 
 GRANT ALL PRIVILEGES ON madb.* TO 'dba'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'dba'@'%';
+
+grant all on *. * to 'dba'@'%' ;
+
+
 FLUSH PRIVILEGES;
 FLUSH PRIVILEGES;
 
