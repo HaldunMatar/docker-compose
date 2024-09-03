@@ -1,3 +1,4 @@
+import time
 import mysql.connector
 import sys
 sys.path.append('../../OBJECT_DETECTION')
@@ -39,14 +40,14 @@ def get_connection():
    
     if 1==1:
         print('get_connection test' , ' hostname ',host_name )
-        if(not is_docker):
-            host='127.0.0.1'
+        #if(not is_docker):
+        host='con_ma_db'
         database='madb'
         password='Password123$'
         user='dba' 
+        time.sleep(10)
         
         return mysql.connector.connect(
-        
                 host=host,
                 database=database,
                 password=password,

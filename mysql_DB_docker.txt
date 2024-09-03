@@ -27,7 +27,7 @@ db password: Password123$
 
 docker-compose up --build
 
- docker exec -it my-mysql-container bash
+ docker exec -it con_ma_db bash
 -  docker build -t my-mysql-image .
 - docker-compose up --build
 - docker exec -it my-mysql-container mysql -u dba -p
@@ -37,3 +37,7 @@ docker-compose up --build
 - docker exec -it my-mysql-container bash
 - apt-get update && apt-get install -y tzdata
 -docker run -d --name my-mysql-container -p 3306:3306 -p 5005:5005  dbdocker-app
+
+CREATE USER 'dba'@'172.18.0.2' IDENTIFIED BY 'Password123$';
+ALTER USER 'dba'@'172.18.0.2' IDENTIFIED BY 'Password123$';
+GRANT ALL PRIVILEGES ON *.* TO 'dba'@'172.18.0.2';clear
