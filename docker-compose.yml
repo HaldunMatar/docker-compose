@@ -36,6 +36,16 @@ services:
       - db
     networks:
       - app-network
+  
+  chat_service:
+    build: ./flaskvanna/vanna-flask/ # Replace with the actual path to the chat service Dockerfile
+    container_name: con_ma_chat
+    environment:
+      - CHAT_SERVICE_ENV_VAR=your_value
+    ports:
+      - "8084:8084"
+    networks:
+      - app-network
 
 volumes:
   mysql_data:
