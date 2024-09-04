@@ -20,7 +20,8 @@ services:
 
   app:
     build: .
-    hostname: "${HOSTNAME}" # Set the hostname dynamically 
+  
+    hostname: ${HOSTNAME}
     extra_hosts: 
       - "host.docker.internal:100.94.180.13"
     container_name: con_ma_back

@@ -18,6 +18,7 @@ CREATE TABLE users ( id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(50), email 
 INSERT INTO users (name, email) VALUES ('ali', 'ali@example.com');
 INSERT INTO users (name, email) VALUES ('haldun', 'haldun@techniaa.com');
 INSERT INTO users (name, email) VALUES ('haldun1', 'haldun@techniaa.com');
+INSERT INTO users (name, email) VALUES ('omar', 'haldun@techniaa.com');
 USE madb ; 
 
 -- Debugging lines
