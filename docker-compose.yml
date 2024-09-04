@@ -40,12 +40,30 @@ services:
   chat_service:
     build: ./flaskvanna/vanna-flask/ # Replace with the actual path to the chat service Dockerfile
     container_name: con_ma_chat
-    environment:
-      - CHAT_SERVICE_ENV_VAR=your_value
+    hostname: ${HOSTNAME}
     ports:
       - "8084:8084"
+    extra_hosts:
+      - "host.docker.internal:100.94.180.13"
+    environment:
+      - HOST=100.94.180.13
+      - PORT=8084
     networks:
       - app-network
+
+
+  dash:
+    build: ./testlocal/ 
+    container_name: con_ma_dash
+    hostname: ${HOSTNAME}
+    ports:
+      - "9596:9596"
+    extra_hosts:
+      - "host.docker.internal:100.94.180.13"
+    environment:
+      - HOST=100.94.180.13
+      - PORT=9596
+    command: npm start
 
 volumes:
   mysql_data:
