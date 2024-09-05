@@ -41,11 +41,16 @@ def get_connection():
     if 1==1:
         print('get_connection test' , ' hostname ',host_name )
         #if(not is_docker):
-        host='con_ma_db'
+        # host='127.0.0.1'
+        # database='MADB'
+        # password='12345678'
+        # user='root' 
+        time.sleep(10)
+        host='192.168.100.10'
         database='madb'
         password='Password123$'
         user='dba' 
-        time.sleep(10)
+        # time.sleep(10)
         
         return mysql.connector.connect(
                 host=host,
